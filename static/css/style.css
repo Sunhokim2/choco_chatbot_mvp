@@ -1,0 +1,117 @@
+/* static/css/style.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.chat-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80vh;
+    min-height: 500px;
+}
+
+h1 {
+    text-align: center;
+    color: #4a2c2a; /* 초콜릿 색상 */
+    padding: 15px;
+    margin: 0;
+    border-bottom: 1px solid #eee;
+    background-color: #f8f8f8;
+}
+
+.chat-box {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 75%;
+    padding: 10px 15px;
+    border-radius: 18px;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #6a4f4b; /* 사용자 메시지 색상 */
+    color: white;
+    border-bottom-right-radius: 2px;
+}
+
+.ai-message {
+    align-self: flex-start;
+    background-color: #e0e0e0; /* AI 메시지 색상 */
+    color: #333;
+    border-bottom-left-radius: 2px;
+}
+
+.ai-message.loading-message {
+    background-color: #dbe9f6;
+    font-style: italic;
+    color: #666;
+}
+
+.ai-message.error-message {
+    background-color: #fbecec;
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.input-area {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #eee;
+    background-color: #f8f8f8;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: border-color 0.3s;
+}
+
+#user-input:focus {
+    outline: none;
+    border-color: #6a4f4b;
+}
+
+#send-button {
+    background-color: #4a2c2a; /* 전송 버튼 색상 */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#send-button:hover {
+    background-color: #6a4f4b;
+}
+
+#send-button:active {
+    background-color: #3a1c1a;
+}

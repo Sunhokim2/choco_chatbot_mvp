@@ -1,0 +1,33 @@
+[project]
+name = "chocolate-ai-guide" # 프로젝트 이름 (원하는대로 변경 가능)
+version = "0.1.0"           # 프로젝트 버전
+description = "A simple chocolate AI guide chat system" # 프로젝트 설명
+authors = [                 # 프로젝트 저자 (본인 정보로 변경)
+    { name = "Your Name", email = "your.email@example.com" }
+]
+dependencies = [
+    "fastapi>=0.111.0",      # FastAPI 웹 프레임워크 (버전은 현재 안정 버전을 기준으로 작성)
+    "uvicorn[standard]>=0.30.1", # Uvicorn ASGI 서버 (standard는 httptools, websockets 등 포함)
+    "Jinja2>=3.1.4",         # Jinja2 템플릿 엔진
+    "openai>=1.35.13",        # OpenAI API 클라이언트
+    "gTTS>=1.2.2",           # Google Text-to-Speech 라이브러리
+    "python-dotenv>=1.0.1",  # .env 파일 로드를 위한 라이브러리
+    # 추가적으로 필요한 라이브러리가 있다면 여기에 명시
+    "pydub",                # TTS 속도 조절을 위한 pydub
+]
+requires-python = ">=3.9"  # 이 프로젝트가 요구하는 Python 최소 버전 (현재 Python 3.12를 사용하시므로 3.9 이상으로 설정)
+readme = "README.md"       # 프로젝트 README 파일 (선택 사항)
+license = { text = "MIT" } # 라이선스 (선택 사항)
+
+[build-system]
+requires = ["setuptools>=61.0"] # 프로젝트 빌드를 위한 요구사항
+build-backend = "setuptools.build_meta" # 빌드 백엔드
+
+[tool.setuptools.packages.find]
+where = ["."] # 현재 디렉토리에서 패키지를 찾도록 설정
+
+# [tool.uvicorn.run] # Uvicorn 설정을 pyproject.toml에 직접 포함하는 경우 (선택 사항)
+# app = "main:app"
+# host = "0.0.0.0"
+# port = 8000
+# reload = true
