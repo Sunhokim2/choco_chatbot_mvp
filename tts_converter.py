@@ -1,7 +1,7 @@
 # tts_converter.py
 from gtts import gTTS
 import os
-from pydub import AudioSegment
+
 import re
 
 # 이모티콘 및 특수문자 제거 함수 (유니코드 이모지 및 기호)
@@ -36,13 +36,8 @@ def convert_text_to_speech(text: str, output_filepath: str):
         tts = gTTS(text=clean_text, lang='ko') # 한국어 설정
         temp_path = output_filepath + '.tmp.mp3'
         tts.save(temp_path)
-        # pydub로 mp3 불러와 속도 1.5배로 변환
-        sound = AudioSegment.from_file(temp_path)
-        faster_sound = sound._spawn(sound.raw_data, overrides={
-            "frame_rate": int(sound.frame_rate * 1.5)
-        }).set_frame_rate(sound.frame_rate)
-        faster_sound.export(output_filepath, format="mp3")
-        os.remove(temp_path)
+
+
         print(f"음성 파일 저장됨: {output_filepath}")
     except Exception as e:
         print(f"TTS 변환 중 오류 발생: {e}")

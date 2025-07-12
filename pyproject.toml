@@ -12,11 +12,10 @@ dependencies = [
     "openai>=1.35.13",        # OpenAI API 클라이언트
     "gTTS>=1.2.2",           # Google Text-to-Speech 라이브러리
     "python-dotenv>=1.0.1",  # .env 파일 로드를 위한 라이브러리
-    # 추가적으로 필요한 라이브러리가 있다면 여기에 명시
-    "pydub",                # TTS 속도 조절을 위한 pydub
+
 ]
 requires-python = ">=3.9"  # 이 프로젝트가 요구하는 Python 최소 버전 (현재 Python 3.12를 사용하시므로 3.9 이상으로 설정)
-readme = "README.md"       # 프로젝트 README 파일 (선택 사항)
+
 license = { text = "MIT" } # 라이선스 (선택 사항)
 
 [build-system]
@@ -31,3 +30,6 @@ where = ["."] # 현재 디렉토리에서 패키지를 찾도록 설정
 # host = "0.0.0.0"
 # port = 8000
 # reload = true
+
+[tool.poetry]
+package-mode = false
